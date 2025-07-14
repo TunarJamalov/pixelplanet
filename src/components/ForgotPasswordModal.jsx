@@ -30,7 +30,7 @@ const ForgotPasswordModal = ({ login }) => (
     <p style={textStyle}>Enter your mail adress and we will send you a new password:</p><br />
     <p style={{ textAlign: 'center' }}>
       <NewPasswordForm back={login} />
-      <p>Also join our Discord: <a href="./discord" target="_blank">pixelplanet.fun/discord</a></p>
+      <p>Also join our Discord: <a href="./discord" target="_blank">pixelking.fun/discord</a></p>
     </p>
   </Modal>
 );

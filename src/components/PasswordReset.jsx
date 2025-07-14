@@ -21,13 +21,13 @@ const PasswordResetError = ({ message }) => (
   <div>
     <h3>Reset Password</h3>
     <p>{message}</p>
-    <p><a href="./">Click here</a> to go back to pixelplanet</p>
+    <p><a href="./">Click here</a> to go back to pixelking</p>
   </div>
 );
 
 export function getPasswordResetHtml(name, code, message = null) {
   const data = {
-    title: 'PixelPlanet.fun Password Reset',
+    title: 'pixelking.fun Password Reset',
     description: 'reset your password here',
     body: (message) ? <PasswordResetError message={message} /> : <PasswordReset name={name} code={code} />,
   };

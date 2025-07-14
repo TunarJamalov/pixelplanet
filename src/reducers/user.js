@@ -50,7 +50,7 @@ const initialState: UserState = {
   totalDailyRanking: {},
   ownFactions: undefined,
   factions: [],
-  chatMessages: [['info', 'Welcome to the PixelPlanet Chat']],
+  chatMessages: [['info', 'Welcome to the pixelking Chat']],
   minecraftname: null,
   isOnMobile: false,
   bannedFactionMembers: new Map<string, Array>(),

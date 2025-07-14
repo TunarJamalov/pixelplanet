@@ -55,19 +55,19 @@ class Minecraft {
           if (finduser.mcVerified) {
             return 'You are already verified';
           }
-          return 'You already got a verification message in the pixelplanet UserArea. Please refresh the page if you do not see it.';
+          return 'You already got a verification message in the pixelking UserArea. Please refresh the page if you do not see it.';
         }
         return `You already linked to other account ${finduser.name}.`;
       }
       const reguser = await RegUser.findOne({ where: { name } });
       if (reguser) {
         if (reguser.minecraftid) {
-          return `This pixelplanet account is already linked to ${reguser.minecraftname}`;
+          return `This pixelking account is already linked to ${reguser.minecraftname}`;
         }
         reguser.update({ minecraftname, minecraftid });
         return null;
       }
-      return `Can not find user ${name} on pixelplanet.`;
+      return `Can not find user ${name} on pixelking.`;
     } catch (err) {
       return 'An unexpected error occured :(';
     }

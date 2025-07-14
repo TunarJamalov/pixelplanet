@@ -64,7 +64,7 @@ class WebSockets {
 
   /*
    * broadcast minecraft linking to API
-   * @param name pixelplanetname
+   * @param name pixelkingname
    * @param minecraftid minecraftid
    * @param accepted If link request got accepted
    */

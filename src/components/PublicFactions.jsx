@@ -82,14 +82,14 @@ const FactionRow = ({
             <>
               {memberOf && (
                 <a
-                  href={`https://pixelplanet.fun/invite/${faction.id}`}
+                  href={`https://pixelking.fun/invite/${faction.id}`}
                   className="faction-joined"
                 >
                   Joined
                 </a>
               )}
               <a
-                href={`https://pixelplanet.fun/invite/${faction.id}`}
+                href={`https://pixelking.fun/invite/${faction.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   if (!memberOf) {

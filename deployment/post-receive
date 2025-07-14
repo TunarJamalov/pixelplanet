@@ -1,5 +1,5 @@
 #!/bin/bash
-# This hook builds pixelplanet after a push, and deploys it
+# This hook builds pixelking after a push, and deploys it
 # If it is the production branch, it will deploy it on the life system, and other branch will get deployed to the dev-canvas (a second canvas that is running on the server)
 # Update messages will get sent via the Webhooks to Discord
 #
@@ -13,11 +13,11 @@ WEBHOOK='https://discordapp.com/api/webhooks/'
 #discord webhook for production canvas
 PWEBHOOK='https://discordapp.com/api/webhooks/'
 #folder for building the canvas (the git repository will get checkout there and the canvas will get buil thtere)
-BUILDDIR="pixelplanet-build"
+BUILDDIR="pixelking-build"
 #folder for dev canvas
-DEVFOLDER="pixelplanet-dev"
+DEVFOLDER="pixelking-dev"
 #folder for production canvas
-PFOLDER="pixelplanet"
+PFOLDER="pixelking"
 #proxies.json path
 PROXYFILE="/proxies.json"
 
@@ -28,10 +28,10 @@ do
         echo "---UPDATING REPO ON PRODUCTION SERVER---"
         GIT_WORK_TREE="$BUILDDIR" GIT_DIR="${BUILDDIR}/.git" git fetch --all
         GIT_WORK_TREE="$BUILDDIR" GIT_DIR="${BUILDDIR}/.git" git reset --hard origin/production
-        curl -H "Content-Type: application/json" --data-binary '{ "username": "PixelPlanet Server", "avatar_url": "https://pixelplanet.fun/favicon.ico", "content": "Restarting canvas for Updates..." }' "$PWEBHOOK"
+        curl -H "Content-Type: application/json" --data-binary '{ "username": "pixelking Server", "avatar_url": "https://pixelking.fun/favicon.ico", "content": "Restarting canvas for Updates..." }' "$PWEBHOOK"
         COMMITS=`git log --pretty=format:'- %s%b' $newrev ^$oldrev`
         COMMITS=`echo "$COMMITS" | sed ':a;N;$!ba;s/\n/\\\n/g'`
-        echo "---BUILDING pixelplanet---"
+        echo "---BUILDING pixelking---"
         cd "$BUILDDIR"
         cp "$PROXYFILE" ./src/
         yarn run build --release
@@ -42,18 +42,18 @@ do
         pm2 stop web
         pm2 start ecosystem.yml
         #make backup
-        tar -cvJf /backup/pixelplanet-src/pixelplanet-src-`date +%Y%m%d`.tar.xz --exclude=node_modules --exclude=.git -C "${BUILDDIR}/.." "pixelplanet-build"
+        tar -cvJf /backup/pixelking-src/pixelking-src-`date +%Y%m%d`.tar.xz --exclude=node_modules --exclude=.git -C "${BUILDDIR}/.." "pixelking-build"
         #send update message to discord
-        curl -H "Content-Type: application/json" --data-binary '{ "username": "PixelPlanet Server", "avatar_url": "https://pixelplanet.fun/favicon.ico", "content": "...Done", "embeds": [{"title": "New Commits", "url": "https://pixelplanet.fun", "description": "'"$COMMITS"'", "color": 15258703}] }' "$PWEBHOOK"
+        curl -H "Content-Type: application/json" --data-binary '{ "username": "pixelking Server", "avatar_url": "https://pixelking.fun/favicon.ico", "content": "...Done", "embeds": [{"title": "New Commits", "url": "https://pixelking.fun", "description": "'"$COMMITS"'", "color": 15258703}] }' "$PWEBHOOK"
     else
         echo "---UPDATING REPO ON DEV SERVER---"
         pm2 stop web-dev
         GIT_WORK_TREE="$BUILDDIR" GIT_DIR="${BUILDDIR}/.git" git fetch --all
         GIT_WORK_TREE="$BUILDDIR" GIT_DIR="${BUILDDIR}/.git" git reset --hard "origin/$branch"
-        curl -H "Content-Type: application/json" --data-binary '{ "username": "PixelPlanet Server", "avatar_url": "https://pixelplanet.fun/favicon.ico", "content": "Restarting pixelplanet development canvas for update..." }' "$WEBHOOK"
+        curl -H "Content-Type: application/json" --data-binary '{ "username": "pixelking Server", "avatar_url": "https://pixelking.fun/favicon.ico", "content": "Restarting pixelking development canvas for update..." }' "$WEBHOOK"
         COMMITS=`git log --pretty=format:'- %s%b' $newrev ^$oldrev`
         COMMITS=`echo "$COMMITS" | sed ':a;N;$!ba;s/\n/\\\n/g'`
-        echo "---BUILDING pixelplanet---"
+        echo "---BUILDING pixelking---"
         cd "$BUILDDIR"
         cp "$PROXYFILE" ./src/
         nice -n 19 yarn run build --release
@@ -62,6 +62,6 @@ do
         #cp ecosystem-dev.yml "${DEVFOLDER}/ecosystem.yml"
         cd "$DEVFOLDER"
         pm2 start ecosystem.yml
-        curl -H "Content-Type: application/json" --data-binary '{ "username": "PixelPlanet Server", "avatar_url": "https://pixelplanet.fun/favicon.ico", "content": "...Done\nhttp://dev.pixelplanet.fun is now on branch '"$branch"'", "embeds": [{"title": "New Commits", "url": "https://pixelplanet.fun", "description": "'"$COMMITS"'", "color": 15258703}] }' "$WEBHOOK"
+        curl -H "Content-Type: application/json" --data-binary '{ "username": "pixelking Server", "avatar_url": "https://pixelking.fun/favicon.ico", "content": "...Done\nhttp://dev.pixelking.fun is now on branch '"$branch"'", "embeds": [{"title": "New Commits", "url": "https://pixelking.fun", "description": "'"$COMMITS"'", "color": 15258703}] }' "$WEBHOOK"
     fi
 done

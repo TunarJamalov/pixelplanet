@@ -20,7 +20,7 @@ const adTagParams = new URLSearchParams();
 adTagParams.set('ad_type', 'video_image_text');
 adTagParams.set('client', 'ca-games-pub-4111661129974554');
 adTagParams.set('videoad_start_delay', 0);
-adTagParams.set('description_url', 'http://pixelplanet.fun/');
+adTagParams.set('description_url', 'http://pixelking.fun/');
 adTagParams.set('max_ad_duration', 20000);
 if (__DEV__) adTagParams.set('adtest', 'on');
 // eslint-disable-next-line max-len

@@ -25,7 +25,7 @@ export default () => (next) => (action) => {
             icon: '/tile.png',
             silent: true,
             vibrate: [200, 100],
-            body: 'You can now place more on pixelplanet.fun :)',
+            body: 'You can now place more on pixelking.fun :)',
           });
         }
         break;

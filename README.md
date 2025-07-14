@@ -1,17 +1,17 @@
-# PixelPlanet.fun
+# pixelking.fun
 
 
-[![Discord](https://img.shields.io/badge/Discord-Support-blue.svg)](https://pixelplanet.fun/discord) ![](https://github.com/pixelplanetdev/pixelplanet/workflows/Node%20CI/badge.svg)
+[![Discord](https://img.shields.io/badge/Discord-Support-blue.svg)](https://pixelking.fun/discord) ![](https://github.com/pixelkingdev/pixelking/workflows/Node%20CI/badge.svg)
 
-Official  repository of [pixelplanet.fun](http://www.pixelplanet.fun).
+Official  repository of [pixelking.fun](http://www.pixelking.fun).
 
 ![videothumb](promotion/videothumb.gif)
 
-Just to the 2nd anniversary of r/space, pixelplanet takes pixelgames to a new level. Place pixels, create pixelart and fight faction wars on pixelplanet.fun.
-Pixelplanet is a 65k x 65k large canvas that is a map of the world and can also be seen as 3d globe, you can place pixels where ever you want, build an island, take over another country with a flag or just create pixelart.
+Just to the 2nd anniversary of r/space, pixelking takes pixelgames to a new level. Place pixels, create pixelart and fight faction wars on pixelking.fun.
+pixelking is a 65k x 65k large canvas that is a map of the world and can also be seen as 3d globe, you can place pixels where ever you want, build an island, take over another country with a flag or just create pixelart.
 30 well chosen colors (decided by polls within the community) are available and you can place a pixel every 3s on an empty space, and 5s on an already set pixel. But pixels can be stacked up to a minute, so you don't have to wait every time.
 
-Pixelplanet receives regular updates and launches events, like a zero second cooldown day on r/place anniversary. We are driven by our community, because placing pixels is more fun together.
+pixelking receives regular updates and launches events, like a zero second cooldown day on r/place anniversary. We are driven by our community, because placing pixels is more fun together.
 
 Controls:
 W, A, S, D, click and drag or pan: Move
@@ -28,8 +28,8 @@ Click or tab: Place Pixel
 Checkout repository
 
 ```
-git clone https://github.com/pixelplanetdev/pixelplanet.git
-cd pixelplanet
+git clone https://github.com/pixelkingdev/pixelking.git
+cd pixelking
 ```
 
 Install packages and build
@@ -57,7 +57,7 @@ git config --global url.https://github.com/.insteadOf git://github.com/
 - nodejs environment with [npm](https://www.npmjs.com/get-npm)
 - [pm2](https://github.com/Unitech/pm2) (`npm install -g pm2`) as process manager and for logging
 - [redis](https://redis.io/) as database for storìng the canvas
-- mysql or mariadb ([setup own user](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql) and [create database](https://www.w3schools.com/SQl/sql_create_db.asp) for pixelplanet) for storing additional data like IP blacklist
+- mysql or mariadb ([setup own user](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql) and [create database](https://www.w3schools.com/SQl/sql_create_db.asp) for pixelking) for storing additional data like IP blacklist
 
 ### Configuration
 Configuration takes place in the environment variables that are defined in ecosystem.yml
@@ -92,7 +92,7 @@ Configuration takes place in the environment variables that are defined in ecosy
 
 Notes:
 
-- to be able to use USE_PROXYCHECK, you have to have an account on proxycheck.io or getipintel or another checker setup and you might set some proxies in `src/proxies.json` (before building) that get used for making proxycheck requests. Look into `src/isProxy.js` to see how things work, but keep in mind that this isn't neccessarily how pixelplanet.fun uses it.
+- to be able to use USE_PROXYCHECK, you have to have an account on proxycheck.io or getipintel or another checker setup and you might set some proxies in `src/proxies.json` (before building) that get used for making proxycheck requests. Look into `src/isProxy.js` to see how things work, but keep in mind that this isn't neccessarily how pixelking.fun uses it.
 - Admins are users with 0cd and access to `./admintools` for image-upload and whatever
 - You can find out the id of a user by looking into the logs (i.e. `info: {ip} / {id} wants to place 2 in (1701, -8315)`) when he places a pixel or by checking the MySql Users database
 
@@ -137,7 +137,7 @@ pm2 start ecosystem.yml
 
 Notes:
 
-- pixelplanet uses the unix command sendmail for sending verification and password reset mails. If you are on windows, this might not work.
+- pixelking uses the unix command sendmail for sending verification and password reset mails. If you are on windows, this might not work.
 - It might be neccessary to change the charset and collate of the sql colum names of table Users to support special character names, which can be done with the SQL command:
 ```
 ALTER TABLE Users CONVERT TO CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci';
@@ -165,7 +165,7 @@ pm2 stop web
 In order to get the real IP and not use the cloudflare Proxy IP for placing pixels, we filter those out. The cloudflare IPs are in src/utils/cloudflareip.js and used in src/utils/ip.js. If for some reason cloudflare ads more IPs to it, you can see them at https://www.cloudflare.com/ips/ and add them.
 If you use any other Reverse Proxy, you can define it's IPs there too.
 
-If USE\_XREALIP is set, we take the IP from the X-Real-Ip header without checking for cloudflare IPs. Use this if you have pixelplanet running behind nginx use the nginx set\_realip module to give us the client ip on the X-Real-Ip header. And be sure to also forward X-Forwarded-Port and set X-Forwarded-Proto.
+If USE\_XREALIP is set, we take the IP from the X-Real-Ip header without checking for cloudflare IPs. Use this if you have pixelking running behind nginx use the nginx set\_realip module to give us the client ip on the X-Real-Ip header. And be sure to also forward X-Forwarded-Port and set X-Forwarded-Proto.
 
 ### Auto-Start
 To have the canvas with all it's components autostart at systemstart,
@@ -174,9 +174,9 @@ And then setup pm2 startup with:
 ```
 pm2 startup
 ```
-(execute as the user that is running pixelplanet)
-And follow the printed steps if needed. This will generate a systemctl service file `/etc/systemd/system/pm2-pixelplanet.service` and enable it. You will have to run `pm2 save` while the canvas is running to let pm2 know what to start.
-To make sure that mysql and redis are up when pixelplanet starts, edit this service file and modify the lines:
+(execute as the user that is running pixelking)
+And follow the printed steps if needed. This will generate a systemctl service file `/etc/systemd/system/pm2-pixelking.service` and enable it. You will have to run `pm2 save` while the canvas is running to let pm2 know what to start.
+To make sure that mysql and redis are up when pixelking starts, edit this service file and modify the lines:
 ```
 Wants=network-online.target
 After=network.target mysql.service redis.service
@@ -193,11 +193,11 @@ You can use `npm run babel-node ./your/script.js` to execute a script with local
 
 ## Backups and Historical View
 
-PixelPlanet includes a backup script that creates full canvas backups daily in the form of PNG tile files and incremential backups all 15min (or whatever you define) that saves PNG tiles with just the differences since the last full daily backup.
+pixelking includes a backup script that creates full canvas backups daily in the form of PNG tile files and incremential backups all 15min (or whatever you define) that saves PNG tiles with just the differences since the last full daily backup.
 
 It requires a [second running redis instance](https://www.digitalocean.com/community/questions/multiple-redis-instances-on-ubuntu-16-04).
 
-The backup script gets built when building pixelplanet and also gets copied to build/ directory. You can run it with:
+The backup script gets built when building pixelking and also gets copied to build/ directory. You can run it with:
 
 ```
 node backup.js REDIS_URL_CANVAS REDIS_URL_BACKUP BACKUP_DIRECTORY [INTERVAL] [COMMAND]
@@ -207,7 +207,7 @@ Make sure to get the order right, because the backup redis instance will be over
 Interval is the time in minutes between incremential backups. If interval is undefined, it will just make one backup and then exit.
 If command is defined, it will be executed after every backup (just one command, with no arguments, like "dosomething.sh"), this is useful for synchronisation with a storage server i.e..
 
-Alternatively you can run it with pm2, just like pixelplanet. An example ecosystem-backup.example.yml file will be located in the build directory.
+Alternatively you can run it with pm2, just like pixelking. An example ecosystem-backup.example.yml file will be located in the build directory.
 
 Note:
 - You do not have to run backups or historical view, it's optional.
@@ -216,7 +216,7 @@ Note:
 
 ![historicalview](promotion/historicalview.gif)
 
-Pixelplanet is able to let the user browse through the past with those backups. For this you need to define `BACKUP_URL` and `BACKUP_DIR` in your ecosystem.yml for pixelplanet.
+pixelking is able to let the user browse through the past with those backups. For this you need to define `BACKUP_URL` and `BACKUP_DIR` in your ecosystem.yml for pixelking.
 `BACKUP_URL` is the URL where the backup folder is available. It's best to let another server serve those files or at least use nginx.
 `BACKUP_DIR` is the full path of the local directory where the backup is located (whats set as `BACKUP_DIRECTORY` in the command of the backup.js).
 

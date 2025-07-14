@@ -3,7 +3,7 @@
 This websocket provides unlimited access to many functions of the site, it is used for Discord Chat Bridge and Minecraft Bridge.
 
 Websocket url:
-`https://[old.]pixelplanet.fun/mcws`
+`https://[old.]pixelking.fun/mcws`
 
 Connection just possible with header:
 
@@ -50,22 +50,22 @@ coolDownSeconds is the added cooldown (negative if pixel couldn't be set because
 
 You will get an answer back like:
 
-```["mcme", minecraftid, waitSeconds, pixelplanetname]```
+```["mcme", minecraftid, waitSeconds, pixelkingname]```
 
-with pixelplanetname being null/None if there is no pixelplanet account linked to this minecraftid.
+with pixelkingname being null/None if there is no pixelking account linked to this minecraftid.
 wait Seconds is the cooldown like in `retpixel` above.
 ### Minecraft LogOut notification
 ```["logout", minecraftid]```
 ### Send Chat Message from Minecraft
 ```["mcchat", minecraftname, message]```
 
-(got an extra command because minecraftname gets resolved to linked pixelplanet user if possible)
+(got an extra command because minecraftname gets resolved to linked pixelking user if possible)
 ### Send Chat Message
 ```["chat", name, message]```
 
 (messages with the name "info" will be displayed as red notifications in the chat window)
-### Link Minecraft Account to pixelplanet Account
-```["linkacc", minecraftid, minecraftname, pixelplanetname]```
+### Link Minecraft Account to pixelking Account
+```["linkacc", minecraftid, minecraftname, pixelkingname]```
 
 Immediate answer:
 
@@ -74,14 +74,14 @@ Immediate answer:
 Error will be null/None if link request can get sent, else it will be a string with the reason why not, examples:
 
 - "You are already verified to [name]"
-- "Can not find user [name] on pixelplanet"
+- "Can not find user [name] on pixelking"
 - "You already linked to other account [name]"
 
-User will then be asked if he wants to link the account on pixelplanet.
+User will then be asked if he wants to link the account on pixelking.
 
 Answer after accept/deny by user:
 
-```["linkver", minecraftid, pixelplanetname, accepted]```
+```["linkver", minecraftid, pixelkingname, accepted]```
 
 With accepted being either true or false. This will be sent to every client connected to the API websocket.
 ### Report online minecraft users

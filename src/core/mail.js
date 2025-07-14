@@ -53,11 +53,11 @@ class MailProvider {
     const verifyUrl = `${host}/api/auth/verify?token=${code}`;
     transporter.sendMail(
       {
-        from: 'donotreply@pixelplanet.fun',
+        from: 'donotreply@pixelking.fun',
         to,
-        replyTo: 'donotreply@pixelplanet.fun',
+        replyTo: 'donotreply@pixelking.fun',
         // eslint-disable-next-line max-len
-        subject: `Welcome ${name} to PixelPlanet, plese verify your mail`,
+        subject: `Welcome ${name} to pixelking, plese verify your mail`,
         // eslint-disable-next-line max-len
         text: `Hello,\nwelcome to our little community of pixelplacers, to use your account, you have to verify your mail. You can do that here:\n ${verifyUrl} \nHave fun and don't hesitate to contact us if you encouter any problems :)\nThanks`,
       },
@@ -103,11 +103,11 @@ class MailProvider {
     const restoreUrl = `${host}/reset_password?token=${code}`;
     transporter.sendMail(
       {
-        from: 'donotreply@pixelplanet.fun',
+        from: 'donotreply@pixelking.fun',
         to,
-        replyTo: 'donotreply@pixelplanet.fun',
+        replyTo: 'donotreply@pixelking.fun',
         // eslint-disable-next-line max-len
-        subject: 'You forgot your password for PixelPlanet? Get a new one here',
+        subject: 'You forgot your password for pixelking? Get a new one here',
         // eslint-disable-next-line max-len
         text: `Hello,\nYou requested to get a new password. You can change your password within the next 30min here:\n ${restoreUrl} \nHave fun and don't hesitate to contact us if you encouter any problems :)\nIf you did not request this mail, please just ignore it (the ip that requested this mail was ${ip}).\nThanks`,
       },

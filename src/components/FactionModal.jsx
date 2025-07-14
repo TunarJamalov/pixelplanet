@@ -139,7 +139,7 @@ const FactionModal = ({
         <p>
           Expand your faction on our Discord:{' '}
           <a href="./discord" target="_blank">
-            pixelplanet.fun/discord
+            pixelking.fun/discord
           </a>
         </p>
       </p>

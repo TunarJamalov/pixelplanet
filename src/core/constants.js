@@ -72,15 +72,15 @@ export const TILE_ZOOM_LEVEL = 4;
 
 // TODO get rid of those or use it myself
 export const social = {
-  facebook: 'https://www.facebook.com/pixelplanetfun/',
-  reddit: 'https://reddit.com/r/PixelPlanetFun',
-  twitter: 'https://twitter.com/pixelplanetfun',
-  discord: 'https://pixelplanet.fun/discord',
-  telegram: 'https://telegram.me/pixelplanetfun',
-  youtube: 'https://www.youtube.com/c/PixelPlanetFun',
+  facebook: 'https://www.facebook.com/pixelkingfun/',
+  reddit: 'https://reddit.com/r/pixelkingFun',
+  twitter: 'https://twitter.com/pixelkingfun',
+  discord: 'https://pixelking.fun/discord',
+  telegram: 'https://telegram.me/pixelkingfun',
+  youtube: 'https://www.youtube.com/c/pixelkingFun',
 };
 
-export const COOKIE_SESSION_NAME = 'pixelplanet.session';
+export const COOKIE_SESSION_NAME = 'pixelking.session';
 
 export const SECOND = 1000;
 export const MINUTE = 60 * SECOND;

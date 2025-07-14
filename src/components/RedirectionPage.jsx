@@ -11,13 +11,13 @@ const RedirectionPage = ({ text, host }) => (
   <div>
     <h3>{text}</h3>
     <p>You will be automatically redirected after 5s</p>
-    <p>Or <a href={host}>Click here</a> to go back to pixelplanet</p>
+    <p>Or <a href={host}>Click here</a> to go back to pixelking</p>
   </div>
 );
 
 export function getHtml(description, text, host) {
   const data = {
-    title: 'PixelPlanet.fun Accounts',
+    title: 'pixelking.fun Accounts',
     description,
     body: <RedirectionPage text={text} host={host} />,
     code: `window.setTimeout(function(){window.location.href="${host}";},4000)`,

@@ -5,7 +5,7 @@
 
 import { durationToString } from '../core/utils';
 
-const TITLE = 'PixelPlanet.fun';
+const TITLE = 'pixelking.fun';
 
 let lastTitle = null;
 

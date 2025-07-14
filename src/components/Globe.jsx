@@ -24,7 +24,7 @@ const Globe = () => (
 );
 
 const data = {
-  title: 'PixelPlanet.fun 3DGlobe',
+  title: 'pixelking.fun 3DGlobe',
   description: '3D globe of our canvas',
   scripts: [
     ASSET_SERVER + assets.globe.js,

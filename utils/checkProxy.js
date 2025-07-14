@@ -1,5 +1,5 @@
 /* @flow */
-// this script checks a ip with the pixelplanet proxychecker
+// this script checks a ip with the pixelking proxychecker
 //
 
 import fetch from '../src/utils/proxiedFetch.js';

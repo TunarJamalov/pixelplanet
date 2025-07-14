@@ -34,22 +34,22 @@ const Error: React.FC<IProps> = (props) => {
           <h1>{getErrorMessage(code)}</h1>
           <a
             className="btn-return"
-            href="https://pixelplanet.fun/"
+            href="https://pixelking.fun/"
             onClick={onReturn}
           >
-            Return to PixelPlanet.fun
+            Return to pixelking.fun
           </a>
         </div>
         <div className="error-logo">
           <img src="favicon.ico" alt="" />
-          PixelPlanet.fun
+          pixelking.fun
         </div>
         <a
           className="bubble"
-          href="https://pixelplanet.fun/"
+          href="https://pixelking.fun/"
           onClick={onReturn}
         >
-          <span style={{ display: 'none' }}>Return to PixelPlanet.fun</span>
+          <span style={{ display: 'none' }}>Return to pixelking.fun</span>
         </a>
       </div>
     </>

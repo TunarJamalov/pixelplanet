@@ -294,7 +294,7 @@ const Admin = ({
                     <input
                       value={
                         selectedFactionInfo.invite
-                          ? `https://pixelplanet.fun/invite/${selectedFactionInfo.invite}`
+                          ? `https://pixelking.fun/invite/${selectedFactionInfo.invite}`
                           : ''
                       }
                       onFocus={onInviteFocus}

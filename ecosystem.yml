@@ -8,8 +8,8 @@ apps:
       PORT: 80
       REDIS_URL: 'redis://localhost:6379'
       MYSQL_HOST: 'localhost'
-      MYSQL_USER: 'pixelplanet'
-      MYSQL_DATABASE: 'pixelplanet'
+      MYSQL_USER: 'pixelking'
+      MYSQL_DATABASE: 'pixelking'
       LOG_MYSQL: 1
       MYSQL_PW: 'sqlpassword'
       SESSION_SECRET: 'ayyylmao'

@@ -13,7 +13,7 @@ import assets from './assets.json';
 import { ASSET_SERVER, BACKUP_URL } from '../core/config';
 
 const data = {
-  title: 'PixelPlanet.fun',
+  title: 'pixelking.fun',
   description: 'Place color pixels on an map styled canvas '
   + 'with other players online',
   //  styles: [

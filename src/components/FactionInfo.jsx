@@ -352,7 +352,7 @@ const FactionInfo = ({
           <h3 style={{ margin: '12px 0' }}>Invite</h3>
           <div className="copy-input">
             <input
-              value={`https://pixelplanet.fun/invite/${selectedFactionInfo.id}`}
+              value={`https://pixelking.fun/invite/${selectedFactionInfo.id}`}
               onFocus={onInviteFocus}
               onBlur={onInviteBlur}
               onMouseEnter={onInviteMouseEnter}
