@@ -40,8 +40,8 @@ const Admin = () => (
 );
 
 const data = {
-  title: 'PixelPlanet.fun AdminTools',
-  description: 'admin access on pixelplanet',
+  title: 'PixelKing.fun AdminTools',
+  description: 'admin access on pixelking',
   body: <Admin />,
 };
 const adminHtml = `<!doctype html>${ReactDOM.renderToStaticMarkup(<Html {...data} />)}`;
